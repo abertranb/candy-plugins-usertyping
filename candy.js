@@ -124,21 +124,10 @@ CandyShop.UserTyping = (function(self, Candy, $) {
      * Shows the message of user is typing
      * @param {type} message
      * @param {type} show_it
-     * @returns {undefined}
+     * @returns void
      */
     self.showMessage = function(message, show_it) {
         var $messagePane = $(Candy.View.Pane.Room.getPane(Candy.View.getCurrent().roomJid));
-        /*if (show_it) {
-            if ($('.candy-usertyping-message-container:visible').length === 0) {
-                $messagePane.prepend('<div class="candy-usertyping-message-container">' + message + '</div>');
-                $messagePane.find('.message-pane-wrapper').addClass('candy-has-usertyping-message');
-            } else {
-                $messagePane.find('.candy-usertyping-message-container').html(message);
-            }
-            $messagePane.find('.candy-usertyping-message-container').show();
-        } else {
-            $messagePane.find('.candy-usertyping-message-container').hide();
-        }*/
         $messagePane.find('.candy-usertyping-message-container').hide();
         $messagePane.find('.candy-usertyping-message-container').remove();
         
@@ -152,7 +141,7 @@ CandyShop.UserTyping = (function(self, Candy, $) {
 
     /**
      * Triggers the event on key up
-     * @returns {undefined}
+     * @returns void
      */
     self.onKeyUp = function() {
         $(".field[name='message']").keyup(function(e) {
